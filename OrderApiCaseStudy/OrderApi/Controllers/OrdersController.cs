@@ -31,9 +31,20 @@ namespace OrderApi.Controllers
             }
 
             _context.Orders.Add(order);
+            _context.SaveChanges(); // Teprve tady se vygeneruje order.Id
+
+            // Po uložení explicitně nastavíme OrderId u každé položky
+            foreach (var item in order.Items)
+            {
+                item.OrderId = order.Id;
+                item.Order = order;
+            }
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+            // Znovu načteme objednávku s položkami, abychom ji vrátili
+            var createdOrder = _context.Orders.Include(o => o.Items).FirstOrDefault(o => o.Id == order.Id);
+
+            return CreatedAtAction(nameof(GetOrder), new { id = createdOrder.Id }, createdOrder);
         }
 
         [HttpGet("{id}")]
