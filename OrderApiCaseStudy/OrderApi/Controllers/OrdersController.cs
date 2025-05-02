@@ -7,7 +7,7 @@ namespace OrderApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class OrdersController : ControllerBase+
+    public class OrdersController : ControllerBase
     {
         private readonly OrderDbContext _context;
 

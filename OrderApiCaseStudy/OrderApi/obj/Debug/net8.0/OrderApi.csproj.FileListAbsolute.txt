@@ -41,3 +41,9 @@ C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\Ord
 C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\obj\Debug\net8.0\OrderApi.pdb
 C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\obj\Debug\net8.0\OrderApi.genruntimeconfig.cache
 C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\obj\Debug\net8.0\ref\OrderApi.dll
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\obj\Debug\net8.0\OrderApi.sourcelink.json
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\josef.prochazka\OneDrive\GitHub\OrderApiCaseStudy\OrderApiCaseStudy\OrderApi\obj\Debug\net8.0\OrderApi.MvcApplicationPartsAssemblyInfo.cs
