@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{42408754-9C76-44B7-8836-B1E7C3D022EC}|OrderApi\\OrderApi.csproj|c:\\users\\josef.prochazka\\onedrive\\github\\orderapicasestudy\\orderapicasestudy\\orderapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42408754-9C76-44B7-8836-B1E7C3D022EC}|OrderApi\\OrderApi.csproj|solutionrelative:orderapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{42408754-9C76-44B7-8836-B1E7C3D022EC}|OrderApi\\OrderApi.csproj|c:\\users\\josef.prochazka\\onedrive\\github\\orderapicasestudy\\orderapicasestudy\\orderapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42408754-9C76-44B7-8836-B1E7C3D022EC}|OrderApi\\OrderApi.csproj|solutionrelative:orderapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,18 +25,14 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "OrderApi\\Controllers\\OrdersController.cs",
-              "ToolTip": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Controllers\\OrdersController.cs*",
-              "RelativeToolTip": "OrderApi\\Controllers\\OrdersController.cs*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowB4AAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "OrderApi\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T12:10:39.317Z",
               "IsPinned": true,
@@ -40,7 +40,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Program.cs",
+              "RelativeDocumentMoniker": "OrderApi\\Program.cs",
+              "ToolTip": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Program.cs*",
+              "RelativeToolTip": "OrderApi\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:51:51.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\Domain\\OrderItem.cs",
               "RelativeDocumentMoniker": "OrderApi\\Domain\\OrderItem.cs",
