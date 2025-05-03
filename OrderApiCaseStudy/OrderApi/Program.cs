@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using OrderApi.Data;
-using OrderApi.Domain;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
+using OrderApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 builder.Services.AddDbContext<OrderDbContext>(options =>
     options.UseInMemoryDatabase("Orders"));
+
+builder.Services.AddHostedService<PaymentProcessorService>();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -29,7 +31,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

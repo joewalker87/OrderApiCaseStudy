@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OrderApi.Data;
 using OrderApi.Domain;
+using OrderApi.Services;
 
 namespace OrderApi.Controllers
 {
@@ -14,12 +15,6 @@ namespace OrderApi.Controllers
         public OrdersController(OrderDbContext context)
         {
             _context = context;
-        }
-
-        [HttpGet("test")]
-        public string TestEndpoint()
-        {
-            return "Funguje to!";
         }
 
         [HttpPost]
@@ -60,13 +55,6 @@ namespace OrderApi.Controllers
             return Ok(order);
         }
 
-        [HttpGet]
-        public IActionResult GetAllOrders()
-        {
-            var orders = _context.Orders.Include(o => o.Items).ToList();
-            return Ok(orders);
-        }
-
         [HttpPost("payment")]
         public IActionResult ProcessPayment(PaymentInfo paymentInfo)
         {
@@ -75,25 +63,25 @@ namespace OrderApi.Controllers
                 return BadRequest("Je nutné zadat číslo objednávky.");
             }
 
-            var order = _context.Orders.FirstOrDefault(o => o.Id == int.Parse(paymentInfo.OrderNumber));
-
-            if (order == null)
+            // Vytvoříme zprávu pro frontu
+            var message = new PaymentQueueMessage
             {
-                return NotFound($"Objednávka s číslem {paymentInfo.OrderNumber} nebyla nalezena.");
-            }
+                OrderNumber = paymentInfo.OrderNumber,
+                IsPaid = paymentInfo.IsPaid
+            };
 
-            if (paymentInfo.IsPaid)
-            {
-                order.Status = OrderStatus.Paid;
-            }
-            else
-            {
-                order.Status = OrderStatus.Cancelled;
-            }
+            // Zařadíme zprávu do fronty
+            PaymentQueue.Queue.Enqueue(message);
 
-            _context.SaveChanges();
+            // Okamžitě vrátíme status 202 Accepted
+            return Accepted($"Žádost o zpracování platby pro objednávku {paymentInfo.OrderNumber} byla přijata.");
+        }
 
-            return Ok($"Stav objednávky {paymentInfo.OrderNumber} byl změněn na {order.Status}.");
+        [HttpGet]
+        public IActionResult GetAllOrders()
+        {
+            var orders = _context.Orders.Include(o => o.Items).ToList();
+            return Ok(orders);
         }
     }
 
