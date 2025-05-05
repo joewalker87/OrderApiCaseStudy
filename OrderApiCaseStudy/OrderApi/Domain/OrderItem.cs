@@ -1,6 +1,6 @@
 ﻿namespace OrderApi.Domain
 {
-    public class OrderItem // polozka objednavky
+    public class OrderItem // polozka objednavky 
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
