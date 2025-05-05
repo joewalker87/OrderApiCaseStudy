@@ -2,7 +2,7 @@
 using OrderApi.Data;
 using OrderApi.Domain;
 
-namespace OrderApi.Services // Změň na OrderApi.Domain, pokud jsi soubor umístil tam
+namespace OrderApi.Services
 {
     public class PaymentProcessorService : BackgroundService
     {
@@ -17,13 +17,13 @@ namespace OrderApi.Services // Změň na OrderApi.Domain, pokud jsi soubor umís
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("Služba pro zpracování plateb na pozadí spuštěna.");
+            _logger.LogInformation("Sluzba pro zpracovani plateb na pozadi spustena.");
 
             while (!stoppingToken.IsCancellationRequested)
             {
                 if (PaymentQueue.Queue.TryDequeue(out var message))
                 {
-                    _logger.LogInformation($"Zpracovávám platbu pro objednávku {message.OrderNumber}, stav zaplacení: {message.IsPaid}.");
+                    _logger.LogInformation($"Zpracovavam platbu pro objednavku {message.OrderNumber}, stav zaplaceni: {message.IsPaid}.");
 
                     using (var scope = _serviceProvider.CreateScope())
                     {
@@ -43,22 +43,21 @@ namespace OrderApi.Services // Změň na OrderApi.Domain, pokud jsi soubor umís
                             }
 
                             await dbContext.SaveChangesAsync();
-                            _logger.LogInformation($"Stav objednávky {message.OrderNumber} byl změněn na {order.Status}.");
+                            _logger.LogInformation($"Stav objednavky {message.OrderNumber} byl zmenen na {order.Status}.");
                         }
                         else
                         {
-                            _logger.LogWarning($"Objednávka s číslem {message.OrderNumber} nebyla nalezena pro zpracování platby.");
+                            _logger.LogWarning($"Objednavka s cislem {message.OrderNumber} nebyla nalezena pro zpracovani platby.");
                         }
                     }
                 }
                 else
                 {
-                    // Pokud je fronta prázdná, počkáme chvíli
-                    await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+                    await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken); // Pokud je fronta empty, tak pockame
                 }
             }
 
-            _logger.LogInformation("Služba pro zpracování plateb na pozadí ukončena.");
+            _logger.LogInformation("Sluzba pro zpracovani plateb na pozadi ukoncena.");
         }
     }
 }

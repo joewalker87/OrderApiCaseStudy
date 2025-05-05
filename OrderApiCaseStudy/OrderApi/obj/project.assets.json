@@ -1036,11 +1036,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
+      "projectUniqueName": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\CASE STUDY_OrderApi\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
       "projectName": "OrderApi",
-      "projectPath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
+      "projectPath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\CASE STUDY_OrderApi\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
       "packagesPath": "C:\\Users\\josef.prochazka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\obj\\",
+      "outputPath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\CASE STUDY_OrderApi\\OrderApiCaseStudy\\OrderApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

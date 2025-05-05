@@ -1,6 +1,6 @@
 ﻿namespace OrderApi.Domain
 {
-    public class Order
+    public class Order // objednavka
     {
         public int Id { get; set; }
         public string CustomerName { get; set; }

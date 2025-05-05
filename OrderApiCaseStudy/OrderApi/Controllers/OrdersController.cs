@@ -22,13 +22,12 @@ namespace OrderApi.Controllers
         {
             if (order == null || !order.Items.Any())
             {
-                return BadRequest("Objednávka musí obsahovat položky.");
+                return BadRequest("Objednavka neobsahuje polozky.");
             }
 
             _context.Orders.Add(order);
-            _context.SaveChanges(); // Teprve tady se vygeneruje order.Id
+            _context.SaveChanges();
 
-            // Po uložení explicitně nastavíme OrderId u každé položky
             foreach (var item in order.Items)
             {
                 item.OrderId = order.Id;
@@ -36,7 +35,6 @@ namespace OrderApi.Controllers
             }
             _context.SaveChanges();
 
-            // Znovu načteme objednávku s položkami, abychom ji vrátili
             var createdOrder = _context.Orders.Include(o => o.Items).FirstOrDefault(o => o.Id == order.Id);
 
             return CreatedAtAction(nameof(GetOrder), new { id = createdOrder.Id }, createdOrder);
@@ -48,9 +46,7 @@ namespace OrderApi.Controllers
             var order = _context.Orders.Include(o => o.Items).FirstOrDefault(o => o.Id == id);
 
             if (order == null)
-            {
                 return NotFound();
-            }
 
             return Ok(order);
         }
@@ -60,21 +56,18 @@ namespace OrderApi.Controllers
         {
             if (paymentInfo == null || string.IsNullOrEmpty(paymentInfo.OrderNumber))
             {
-                return BadRequest("Je nutné zadat číslo objednávky.");
+                return BadRequest("Chybi cislo objednavky.");
             }
 
-            // Vytvoříme zprávu pro frontu
-            var message = new PaymentQueueMessage
+            var messageForQueue = new PaymentQueueMessage
             {
                 OrderNumber = paymentInfo.OrderNumber,
                 IsPaid = paymentInfo.IsPaid
             };
 
-            // Zařadíme zprávu do fronty
-            PaymentQueue.Queue.Enqueue(message);
+            PaymentQueue.Queue.Enqueue(messageForQueue);
 
-            // Okamžitě vrátíme status 202 Accepted
-            return Accepted($"Žádost o zpracování platby pro objednávku {paymentInfo.OrderNumber} byla přijata.");
+            return Accepted($"Zadost o zpracovani platby pro objednavku {paymentInfo.OrderNumber} byla prijata.");
         }
 
         [HttpGet]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8RWEUtMX0oY=",
+  "dgSpecHash": "1ra3qS3mTwU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\OrderApiCaseStudy\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
+  "projectFilePath": "C:\\Users\\josef.prochazka\\OneDrive\\GitHub\\CASE STUDY_OrderApi\\OrderApiCaseStudy\\OrderApi\\OrderApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\josef.prochazka\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.4\\microsoft.entityframeworkcore.9.0.4.nupkg.sha512",
     "C:\\Users\\josef.prochazka\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.4\\microsoft.entityframeworkcore.abstractions.9.0.4.nupkg.sha512",
